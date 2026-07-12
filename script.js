@@ -1,5 +1,5 @@
-// Modern Landing Page JavaScript
-// Production-ready with dark mode toggle and mobile menu
+// CatLoo Industries - Main JavaScript
+// Dark mode toggle, mobile menu, and interactive features
 
 (function() {
     'use strict';
@@ -9,12 +9,13 @@
     const menuToggle = document.getElementById('menuToggle');
     const navMenu = document.getElementById('navMenu');
     const currentYear = document.getElementById('currentYear');
+    const contactForm = document.getElementById('contactForm');
 
     // Initialize
     init();
 
     function init() {
-        // Set current year in footer
+        // Set current year
         setCurrentYear();
 
         // Load saved theme preference
@@ -24,7 +25,7 @@
         bindEvents();
     }
 
-    // Set current year
+    // Set current year in footer
     function setCurrentYear() {
         if (currentYear) {
             currentYear.textContent = new Date().getFullYear();
@@ -55,6 +56,9 @@
             if (icon) {
                 icon.textContent = theme === 'light' ? '🌙' : '☀️';
             }
+            themeToggle.setAttribute('aria-label',
+                theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'
+            );
         }
     }
 
@@ -71,6 +75,66 @@
         }
     }
 
+    // Form Handling
+    function handleFormSubmit(e) {
+        e.preventDefault();
+
+        const formData = new FormData(contactForm);
+        const name = formData.get('name');
+        const email = formData.get('email');
+        const subject = formData.get('subject');
+        const message = formData.get('message');
+
+        // Simulate form submission
+        console.log('Form submitted:', { name, email, subject, message });
+
+        // Show success message (in production, this would be an actual API call)
+        alert(`Thank you for your message, ${name}! Our feline specialists will respond within 24 hours.`);
+
+        // Reset form
+        contactForm.reset();
+    }
+
+    // Smooth scroll for anchor links
+    function setupSmoothScroll() {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const target = document.querySelector(targetId);
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    }
+
+    // Card interactions - make all cards clickable
+    function setupCardInteractions() {
+        document.querySelectorAll('.feature-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const title = this.querySelector('.feature-title')?.textContent;
+                const productId = this.querySelector('a')?.getAttribute('href');
+
+                // Navigate to relevant section based on card content
+                if (title) {
+                    if (title.includes('Basic')) {
+                        window.location.hash = '#shop-basic';
+                    } else if (title.includes('Pro')) {
+                        window.location.hash = '#shop-pro';
+                    } else if (title.includes('Deluxe')) {
+                        window.location.hash = '#shop-deluxe';
+                    }
+                }
+            });
+
+            // Add pointer cursor
+            card.style.cursor = 'pointer';
+        });
+    }
+
     // Event Bindings
     function bindEvents() {
         // Theme toggle
@@ -81,6 +145,11 @@
         // Mobile menu toggle
         if (menuToggle) {
             menuToggle.addEventListener('click', toggleMenu);
+        }
+
+        // Contact form
+        if (contactForm) {
+            contactForm.addEventListener('submit', handleFormSubmit);
         }
 
         // Close menu when clicking outside
@@ -115,18 +184,25 @@
                 menuToggle.setAttribute('aria-expanded', 'false');
             }
         });
+
+        // Setup smooth scroll
+        setupSmoothScroll();
+
+        // Setup card interactions
+        setupCardInteractions();
+
+        // Make logo clickable - scroll to top
+        const logos = document.querySelectorAll('.logo');
+        logos.forEach(logo => {
+            logo.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                window.location.hash = '#home';
+            });
+        });
     }
 
-    // Expose for inline handlers
-    window.startGame = function() {
-        console.log('Start game placeholder');
-    };
-
-    window.pauseGame = function() {
-        console.log('Pause game placeholder');
-    };
-
-    window.resetGame = function() {
-        console.log('Reset game placeholder');
-    };
+    // Expose functions globally
+    window.toggleTheme = toggleTheme;
+    window.toggleMenu = toggleMenu;
 })();

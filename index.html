@@ -3,18 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Landing Page</title>
+    <meta name="description" content="Premium miniature toilets designed exclusively for cats. Eco-friendly, odor-controlled, and easy to clean. Make your cat's bathroom experience luxurious.">
+    <meta name="keywords" content="cat toilet, miniature toilet, cat bathroom, pet accessories, eco-friendly cat products">
+    <meta name="author" content="CatLoo Industries">
+    <title>CatLoo - Premium Miniature Toilets for Cats</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="container nav-container">
-            <a href="#" class="logo" aria-label="Company Logo">Brand</a>
+            <a href="#home" class="logo" aria-label="CatLoo Home">
+                🐱 CatLoo
+            </a>
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#products" class="nav-link">Products</a></li>
                 <li><a href="#features" class="nav-link">Features</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#about" class="nav-link">About Us</a></li>
+                <li><a href="#testimonials" class="nav-link">Reviews</a></li>
+                <li><a href="#faq" class="nav-link">FAQ</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
             <div class="nav-controls">
@@ -32,15 +43,71 @@
     <section class="hero" id="home">
         <div class="container hero-container">
             <div class="hero-content">
-                <h1 class="hero-title">Welcome to Modern Solutions</h1>
-                <p class="hero-subtitle">Discover powerful tools and innovative solutions designed to elevate your business and streamline your workflow.</p>
+                <h1 class="hero-title">Transform Your Cat's Bathroom Experience</h1>
+                <p class="hero-subtitle">Premium miniature toilets designed exclusively for cats. Eco-friendly, odor-controlled, and easy to clean. Give your feline the luxury bathroom they deserve.</p>
                 <div class="hero-actions">
-                    <a href="#get-started" class="btn btn-primary">Get Started</a>
-                    <a href="#learn-more" class="btn btn-secondary">Learn More</a>
+                    <a href="#products" class="btn btn-primary">Shop Collection</a>
+                    <a href="#features" class="btn btn-secondary">View Features</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">50K+</span>
+                        <span class="stat-label">Happy Customers</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">4.9★</span>
+                        <span class="stat-label">Average Rating</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Satisfaction</span>
+                    </div>
                 </div>
             </div>
             <div class="hero-image">
-                <div class="hero-graphic" aria-hidden="true"></div>
+                <div class="hero-graphic" aria-label="Illustration of premium cat toilet product">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 150'%3E%3Crect x='20' y='40' width='160' height='100' rx='10' fill='%233b82f6'/%3E%3Crect x='30' y='50' width='140' height='80' rx='5' fill='%23e2e8f0'/%3E%3Ccircle cx='100' cy='90' r='25' fill='%2364748b'/%3E%3Cpath d='M90 30 L110 30 L110 50 L90 50 Z' fill='%231e293b'/%3E%3C/svg%3E" alt="CatLoo Premium Cat Toilet">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="container">
+            <h2 class="section-title">Our Product Collection</h2>
+            <p class="section-description">Choose from our range of premium, space-saving toilets designed specifically for your cat's comfort and your home's aesthetic.</p>
+            <div class="features-grid">
+                <div class="feature-card product-card">
+                    <div class="feature-icon" aria-hidden="true">🚽</div>
+                    <h3 class="feature-title">CatLoo Basic</h3>
+                    <p class="feature-text">Our entry-level model featuring basic flushing technology, compact design, and easy maintenance. Perfect for first-time cat toilet users.</p>
+                    <div class="product-details">
+                        <span class="price">$89.99</span>
+                        <span class="detail">Plastic construction • Manual flush</span>
+                        <a href="#buy-basic" class="btn btn-primary btn-small">Buy Now</a>
+                    </div>
+                </div>
+                <div class="feature-card product-card">
+                    <div class="feature-icon" aria-hidden="true">🌟</div>
+                    <h3 class="feature-title">CatLoo Pro</h3>
+                    <p class="feature-text">Advanced model with automatic sensor flush, odor-sealing technology, and adjustable seat height. Includes night light for midnight visits.</p>
+                    <div class="product-details">
+                        <span class="price">$149.99</span>
+                        <span class="detail">Premium plastic • Auto flush • Included scoop</span>
+                        <a href="#buy-pro" class="btn btn-primary btn-small">Buy Now</a>
+                    </div>
+                </div>
+                <div class="feature-card product-card">
+                    <div class="feature-icon" aria-hidden="true">👑</div>
+                    <h3 class="feature-title">CatLoo Deluxe</h3>
+                    <p class="feature-text">Luxury porcelain construction with smart WiFi connectivity, self-cleaning cycle, and mobile app integration. The ultimate in cat bathroom sophistication.</p>
+                    <div class="product-details">
+                        <span class="price">$299.99</span>
+                        <span class="detail">Porcelain • Smart features • Self-cleaning</span>
+                        <a href="#buy-deluxe" class="btn btn-primary btn-small">Buy Now</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -48,23 +115,217 @@
     <!-- Features Section -->
     <section class="features" id="features">
         <div class="container">
-            <h2 class="section-title">Our Features</h2>
-            <p class="section-description">Explore the powerful features that make us stand out from the competition.</p>
+            <h2 class="section-title">Why Choose CatLoo?</h2>
+            <p class="section-description">Our innovative design solves common litter box problems with cutting-edge technology and thoughtful engineering.</p>
             <div class="features-grid">
                 <div class="feature-card">
-                    <div class="feature-icon" aria-hidden="true">🚀</div>
-                    <h3 class="feature-title">Blazing Fast</h3>
-                    <p class="feature-text">Experience lightning-fast performance with our optimized solutions built for speed and efficiency.</p>
+                    <div class="feature-icon" aria-hidden="true">♻️</div>
+                    <h3 class="feature-title">Water-Efficient</h3>
+                    <p class="feature-text">Uses 90% less water than standard toilets. Each flush consumes only 0.3 liters, making it environmentally friendly and cost-effective.</p>
                 </div>
                 <div class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">🛡️</div>
+                    <h3 class="feature-title">Odor Sealing</h3>
+                    <p class="feature-text">Advanced sealing technology locks in odors immediately. Built-in activated carbon filter eliminates 99% of unpleasant smells.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">🧹</div>
+                    <h3 class="feature-title">Easy Cleaning</h3>
+                    <p class="feature-text">Non-stick ceramic coating prevents residue buildup. Smooth surfaces clean in seconds with minimal effort required.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">📏</div>
+                    <h3 class="feature-title">Perfect Size</h3>
+                    <p class="feature-text">Specially designed at 6 inches diameter - ideal for cats up to 20 pounds. Compact footprint saves valuable floor space.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">⚡</div>
+                    <h3 class="feature-title">Quick Installation</h3>
+                    <p class="feature-text">Ready to use in minutes. Includes all necessary adapters for standard plumbing connections. No professional installation required.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">🏆</div>
+                    <h3 class="feature-title">Veterinarian Approved</h3>
+                    <p class="feature-text">Endorsed by leading vets for promoting hygiene and reducing litter-related allergies. Safe for cats 8 weeks and older.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Customers Say</h2>
+            <p class="section-description">Join thousands of satisfied pet parents who've upgraded their cat's bathroom experience.</p>
+            <div class="features-grid">
+                <div class="feature-card testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar" aria-hidden="true">🐈</div>
+                        <div>
+                            <h4 class="feature-title" style="margin-bottom: 0.25rem;">Sarah Johnson</h4>
+                            <span class="testimonial-stars">★★★★★</span>
+                        </div>
+                    </div>
+                    <p class="feature-text">"Finally! Something that actually keeps the smell away. My cat took to it immediately and I haven't bought litter in 6 months!"</p>
+                </div>
+                <div class="feature-card testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar" aria-hidden="true">🐾</div>
+                        <div>
+                            <h4 class="feature-title" style="margin-bottom: 0.25rem;">Michael Chen</h4>
+                            <span class="testimonial-stars">★★★★★</span>
+                        </div>
+                    </div>
+                    <p class="feature-text">"The Deluxe model was worth every penny. The WiFi feature is oddly satisfying to monitor from my phone. Great engineering!"</p>
+                </div>
+                <div class="feature-card testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar" aria-hidden="true">😸</div>
+                        <div>
+                            <h4 class="feature-title" style="margin-bottom: 0.25rem;">Emma Rodriguez</h4>
+                            <span class="testimonial-stars">★★★★★</span>
+                        </div>
+                    </div>
+                    <p class="feature-text">"My apartment has never smelled better. Installation was surprisingly simple and my cat adapted in just one day!"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <details class="faq-item">
+                    <summary class="faq-question">Is the CatLoo safe for all cats?</summary>
+                    <p class="faq-answer">Yes! Our toilets are designed for cats 8 weeks and older, up to 20 pounds. The step-by-step training guide ensures a smooth transition from litter boxes.</p>
+                </details>
+                <details class="faq-item">
+                    <summary class="faq-question">How does the flushing mechanism work?</summary>
+                    <p class="faq-answer">The Basic and Pro models use a simple button-activated flush system. The Deluxe model features motion sensors that detect when your cat has finished.</p>
+                </details>
+                <details class="faq-item">
+                    <summary class="faq-question">What plumbing connections are needed?</summary>
+                    <p class="faq-answer">Standard 1.25-inch connections included. Compatible with most residential plumbing. Professional installation recommended for Deluxe model smart features.</p>
+                </details>
+                <details class="faq-item">
+                    <summary class="faq-question">How often does it need cleaning?</summary>
+                    <p class="faq-answer">The self-cleaning cycle on Deluxe model runs automatically. Basic/Pro models need manual cleaning once weekly with included non-abrasive cleaner.</p>
+                </details>
+                <details class="faq-item">
+                    <summary class="faq-question">What's the warranty period?</summary>
+                    <p class="faq-answer">All models include our 3-year comprehensive warranty covering manufacturing defects, with lifetime support for all customers.</p>
+                </details>
+                <details class="faq-item">
+                    <summary class="faq-question">Do you offer international shipping?</summary>
+                    <p class="faq-answer">Yes! We ship worldwide with 3-5 business day processing and 7-21 day delivery depending on location. Free shipping on orders over $150.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h2 class="section-title" style="text-align: left; margin-bottom: 1.5rem;">About CatLoo Industries</h2>
+                    <p class="section-description" style="text-align: left;">Founded in 2023 by veterinarian Dr. Sarah Whiskers and engineer Alex Flushman, CatLoo Industries revolutionizes pet hygiene with innovative bathroom solutions. Our mission: create cleaner homes and happier cats through superior design.</p>
+                    <p class="feature-text" style="margin-top: 1rem;">Based in Portland, Oregon, we've served over 50,000 customers across 25 countries. Every product undergoes rigorous testing in our cat-friendly facility where local shelter cats help us perfect each design.</p>
+                    <div class="hero-actions" style="margin-top: 2rem;">
+                        <a href="#learn-more" class="btn btn-secondary">Our Story</a>
+                        <a href="#careers" class="btn btn-secondary">Careers</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-graphic" style="height: 300px; background: linear-gradient(135deg, var(--color-secondary), var(--color-accent));">
+                        <div style="display: flex; align-items: center; justify-content: center; height: 100%; font-size: 4rem;" aria-label="Team photo placeholder">🏢</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <p class="section-description">Have questions? Our feline specialists are here to help!</p>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <ul class="contact-list">
+                        <li>
+                            <strong>Email:</strong>
+                            <a href="mailto:purr@catloo.com">purr@catloo.com</a>
+                        </li>
+                        <li>
+                            <strong>Phone:</strong>
+                            <a href="tel:+1-503-555-CATS">+1 (503) 555-CATS (2287)</a>
+                        </li>
+                        <li>
+                            <strong>Hours:</strong>
+                            <span>Mon-Fri 9AM-6PM PST, Sat-Sun 10AM-4PM PST</span>
+                        </li>
+                        <li>
+                            <strong>Address:</strong>
+                            <a href="https://maps.google.com/?q=1234+Purr+Street+Portland+OR" target="_blank" rel="noopener">1234 Purr Street, Portland, OR 97201</a>
+                        </li>
+                    </ul>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Select topic</option>
+                            <option value="order">Order Question</option>
+                            <option value="support">Technical Support</option>
+                            <option value="partnership">Partnership Inquiry</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="How can we help?" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security & Trust Section -->
+    <section class="security">
+        <div class="container">
+            <div class="security-grid">
+                <div class="security-item">
                     <div class="feature-icon" aria-hidden="true">🔒</div>
-                    <h3 class="feature-title">Secure & Reliable</h3>
-                    <p class="feature-text">Your data is protected with enterprise-grade security and 99.9% uptime guarantee.</p>
+                    <h4>256-bit SSL Encryption</h4>
+                    <p>All transactions secured with bank-level security protocols.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon" aria-hidden="true">💡</div>
-                    <h3 class="feature-title">Intuitive Design</h3>
-                    <p class="feature-text">User-friendly interfaces designed with simplicity and elegance in mind.</p>
+                <div class="security-item">
+                    <div class="feature-icon" aria-hidden="true">🛡️</div>
+                    <h4>30-Day Money Back</h4>
+                    <p>Not satisfied? Return within 30 days for full refund.</p>
+                </div>
+                <div class="security-item">
+                    <div class="feature-icon" aria-hidden="true">🚚</div>
+                    <h4>Free Shipping</h4>
+                    <p>Free delivery on all orders over $150 worldwide.</p>
+                </div>
+                <div class="security-item">
+                    <div class="feature-icon" aria-hidden="true">📞</div>
+                    <h4>24/7 Support</h4>
+                    <p>Expert assistance available anytime you need it.</p>
                 </div>
             </div>
         </div>
@@ -74,16 +335,24 @@
     <footer class="footer">
         <div class="container footer-container">
             <div class="footer-brand">
-                <a href="#" class="logo footer-logo">Brand</a>
-                <p class="footer-text">Creating digital experiences that matter.</p>
+                <a href="#home" class="logo footer-logo">🐱 CatLoo</a>
+                <p class="footer-text">Premium miniature toilets for cats. Making homes cleaner, one purr at a time.</p>
+                <div class="social-links">
+                    <a href="#instagram" aria-label="Instagram">📷</a>
+                    <a href="#facebook" aria-label="Facebook">📘</a>
+                    <a href="#twitter" aria-label="Twitter">🐦</a>
+                    <a href="#youtube" aria-label="YouTube">📺</a>
+                </div>
             </div>
             <div class="footer-links">
                 <div class="footer-column">
-                    <h4 class="footer-heading">Product</h4>
+                    <h4 class="footer-heading">Products</h4>
                     <ul>
-                        <li><a href="#features">Features</a></li>
-                        <li><a href="#pricing">Pricing</a></li>
-                        <li><a href="#documentation">Documentation</a></li>
+                        <li><a href="#shop-basic">CatLoo Basic</a></li>
+                        <li><a href="#shop-pro">CatLoo Pro</a></li>
+                        <li><a href="#shop-deluxe">CatLoo Deluxe</a></li>
+                        <li><a href="#accessories">Accessories</a></li>
+                        <li><a href="#replacement-parts">Replacement Parts</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -91,22 +360,38 @@
                     <ul>
                         <li><a href="#about">About Us</a></li>
                         <li><a href="#careers">Careers</a></li>
+                        <li><a href="#press">Press</a></li>
                         <li><a href="#blog">Blog</a></li>
+                        <li><a href="#partners">Partners</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h4 class="footer-heading">Support</h4>
                     <ul>
-                        <li><a href="#contact">Contact</a></li>
-                        <li><a href="#help">Help Center</a></li>
-                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#help-center">Help Center</a></li>
+                        <li><a href="#shipping-info">Shipping Info</a></li>
+                        <li><a href="#returns-policy">Returns Policy</a></li>
+                        <li><a href="#privacy-policy">Privacy Policy</a></li>
+                        <li><a href="#terms-of-service">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-heading">Legal</h4>
+                    <ul>
+                        <li><a href="#warranty">Warranty</a></li>
+                        <li><a href="#security-policy">Security Policy</a></li>
+                        <li><a href="#cookie-policy">Cookie Policy</a></li>
+                        <li><a href="#compliance">Compliance</a></li>
+                        <li><a href="#accessibility">Accessibility</a></li>
                     </ul>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
             <div class="container">
-                <p>&copy; <span id="currentYear"></span> Brand. All rights reserved.</p>
+                <p>&copy; <span id="currentYear"></span> CatLoo Industries. All rights reserved.</p>
+                <p>Registered in Oregon. EIN: 84-1234567 | Licensed Veterinary Equipment Supplier</p>
             </div>
         </div>
     </footer>
