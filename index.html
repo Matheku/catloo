@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Landing Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="container nav-container">
+            <a href="#" class="logo" aria-label="Company Logo">Brand</a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#features" class="nav-link">Features</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-controls">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <span class="toggle-icon">🌙</span>
+                </button>
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Welcome to Modern Solutions</h1>
+                <p class="hero-subtitle">Discover powerful tools and innovative solutions designed to elevate your business and streamline your workflow.</p>
+                <div class="hero-actions">
+                    <a href="#get-started" class="btn btn-primary">Get Started</a>
+                    <a href="#learn-more" class="btn btn-secondary">Learn More</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-graphic" aria-hidden="true"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title">Our Features</h2>
+            <p class="section-description">Explore the powerful features that make us stand out from the competition.</p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">🚀</div>
+                    <h3 class="feature-title">Blazing Fast</h3>
+                    <p class="feature-text">Experience lightning-fast performance with our optimized solutions built for speed and efficiency.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">🔒</div>
+                    <h3 class="feature-title">Secure & Reliable</h3>
+                    <p class="feature-text">Your data is protected with enterprise-grade security and 99.9% uptime guarantee.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">💡</div>
+                    <h3 class="feature-title">Intuitive Design</h3>
+                    <p class="feature-text">User-friendly interfaces designed with simplicity and elegance in mind.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <a href="#" class="logo footer-logo">Brand</a>
+                <p class="footer-text">Creating digital experiences that matter.</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4 class="footer-heading">Product</h4>
+                    <ul>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#documentation">Documentation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-heading">Company</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-heading">Support</h4>
+                    <ul>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#help">Help Center</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; <span id="currentYear"></span> Brand. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
