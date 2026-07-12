@@ -23,6 +23,9 @@
 
         // Bind event listeners
         bindEvents();
+
+        // Setup all click handlers
+        setupAllClickables();
     }
 
     // Set current year in footer
@@ -95,6 +98,78 @@
         contactForm.reset();
     }
 
+    // Setup all clickable elements
+    function setupAllClickables() {
+        // Make stat elements clickable - navigate to relevant sections
+        document.querySelectorAll('.stat').forEach(stat => {
+            stat.addEventListener('click', function(e) {
+                const label = this.querySelector('.stat-label')?.textContent;
+                if (label === 'Happy Customers' || label === 'Average Rating') {
+                    window.location.hash = '#testimonials';
+                } else if (label === 'Satisfaction') {
+                    window.location.hash = '#shipping-info';
+                }
+            });
+            stat.style.cursor = 'pointer';
+        });
+
+        // Make feature icons clickable
+        document.querySelectorAll('.feature-icon').forEach(icon => {
+            icon.addEventListener('click', function(e) {
+                const card = this.closest('.feature-card');
+                const title = card?.querySelector('.feature-title')?.textContent;
+                const titleLink = card?.querySelector('.feature-title-link');
+
+                if (titleLink) {
+                    titleLink.click();
+                } else if (title) {
+                    // Navigate based on feature
+                    if (title.includes('Water')) window.location.hash = '#eco-info';
+                    else if (title.includes('Odor')) window.location.hash = '#odor-tech';
+                    else if (title.includes('Easy')) window.location.hash = '#cleaning';
+                    else if (title.includes('Size')) window.location.hash = '#dimensions';
+                    else if (title.includes('Installation')) window.location.hash = '#install-guide';
+                    else if (title.includes('Veterinarian')) window.location.hash = '#vet-approved';
+                }
+            });
+            icon.style.cursor = 'pointer';
+        });
+
+        // Make testimonial cards clickable
+        document.querySelectorAll('.testimonial-card').forEach(card => {
+            card.addEventListener('click', function() {
+                window.location.hash = '#testimonials';
+            });
+            card.style.cursor = 'pointer';
+        });
+
+        // Make security items clickable
+        document.querySelectorAll('.security-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const title = this.querySelector('h4')?.textContent;
+                if (title === '256-bit SSL Encryption') window.location.hash = '#security-policy';
+                else if (title === '30-Day Money Back') window.location.hash = '#returns-policy';
+                else if (title === 'Free Shipping') window.location.hash = '#shipping-info';
+                else if (title === '24/7 Support') window.location.hash = '#contact';
+            });
+            item.style.cursor = 'pointer';
+        });
+
+        // Make hero graphic clickable
+        const heroGraphic = document.querySelector('.hero-graphic');
+        if (heroGraphic) {
+            heroGraphic.addEventListener('click', function() {
+                window.location.hash = '#products';
+            });
+            heroGraphic.style.cursor = 'pointer';
+        }
+
+        // Make section titles and descriptions clickable to scroll to sections
+        document.querySelectorAll('.section-title, .section-description').forEach(el => {
+            el.style.cursor = 'default';
+        });
+    }
+
     // Smooth scroll for anchor links
     function setupSmoothScroll() {
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -114,9 +189,12 @@
     // Card interactions - make all cards clickable
     function setupCardInteractions() {
         document.querySelectorAll('.feature-card').forEach(card => {
+            // Don't override if it has its own link
+            const hasTitleLink = card.querySelector('.feature-title-link');
+            if (hasTitleLink) return;
+
             card.addEventListener('click', function() {
                 const title = this.querySelector('.feature-title')?.textContent;
-                const productId = this.querySelector('a')?.getAttribute('href');
 
                 // Navigate to relevant section based on card content
                 if (title) {
