@@ -55,9 +55,9 @@
 
     function updateToggleIcon(theme) {
         if (themeToggle) {
-            const icon = themeToggle.querySelector('.toggle-icon');
+            const icon = themeToggle.querySelector('.toggle-icon svg');
             if (icon) {
-                icon.textContent = theme === 'light' ? '🌙' : '☀️';
+                icon.setAttribute('href', theme === 'light' ? '#icon-moon' : '#icon-sun');
             }
             themeToggle.setAttribute('aria-label',
                 theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'
@@ -98,75 +98,210 @@
         contactForm.reset();
     }
 
+    // Modal functionality
+    function showModal(title, content) {
+        const modal = document.getElementById('modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalBody = document.getElementById('modal-body');
+
+        if (modal && modalTitle && modalBody) {
+            modalTitle.textContent = title;
+            modalBody.innerHTML = content;
+            modal.classList.add('active');
+            modal.setAttribute('aria-hidden', 'false');
+        }
+    }
+
+    function closeModal() {
+        const modal = document.getElementById('modal');
+        if (modal) {
+            modal.classList.remove('active');
+            modal.setAttribute('aria-hidden', 'true');
+        }
+    }
+
     // Setup all clickable elements
     function setupAllClickables() {
         // Make stat elements clickable - navigate to relevant sections
         document.querySelectorAll('.stat').forEach(stat => {
             stat.addEventListener('click', function(e) {
                 const label = this.querySelector('.stat-label')?.textContent;
-                if (label === 'Happy Customers' || label === 'Average Rating') {
-                    window.location.hash = '#testimonials';
-                } else if (label === 'Satisfaction') {
-                    window.location.hash = '#shipping-info';
+                if (label === 'Rating' || label === 'Installed') {
+                    window.location.hash = '#reviews';
+                } else if (label === 'Shipping') {
+                    window.location.hash = '#support';
                 }
             });
             stat.style.cursor = 'pointer';
         });
 
-        // Make feature icons clickable
-        document.querySelectorAll('.feature-icon').forEach(icon => {
+        // Make tech icons clickable
+        document.querySelectorAll('.tech-icon').forEach(icon => {
             icon.addEventListener('click', function(e) {
-                const card = this.closest('.feature-card');
-                const title = card?.querySelector('.feature-title')?.textContent;
-                const titleLink = card?.querySelector('.feature-title-link');
+                const tech = this.getAttribute('data-tech');
+                let title, content;
 
-                if (titleLink) {
-                    titleLink.click();
-                } else if (title) {
-                    // Navigate based on feature
-                    if (title.includes('Water')) window.location.hash = '#eco-info';
-                    else if (title.includes('Odor')) window.location.hash = '#odor-tech';
-                    else if (title.includes('Easy')) window.location.hash = '#cleaning';
-                    else if (title.includes('Size')) window.location.hash = '#dimensions';
-                    else if (title.includes('Installation')) window.location.hash = '#install-guide';
-                    else if (title.includes('Veterinarian')) window.location.hash = '#vet-approved';
+                switch(tech) {
+                    case 'flush':
+                        title = 'Flush System';
+                        content = '<p>Our 0.3L precision-engineered mechanism operates at under 25dB for whisper-quiet performance. Features a ceramic valve rated for 50,000+ cycles.</p>';
+                        break;
+                    case 'odor':
+                        title = 'Odor Control';
+                        content = '<p>Advanced activated carbon filtration with sealed trapway technology eliminates 99.7% of odors within 30 seconds.</p>';
+                        break;
+                    case 'safety':
+                        title = 'Safety Certified';
+                        content = '<p>All materials are NSF-approved, non-toxic, and BPA-free. Rounded edges and stable base prevent tipping.</p>';
+                        break;
+                    case 'cleaning':
+                        title = 'Easy Clean';
+                        content = '<p>Antimicrobial coated surfaces resist residue buildup. Disassembly takes seconds for thorough cleaning.</p>';
+                        break;
                 }
+
+                if (title) showModal(title, content);
             });
-            icon.style.cursor = 'pointer';
         });
 
-        // Make testimonial cards clickable
-        document.querySelectorAll('.testimonial-card').forEach(card => {
-            card.addEventListener('click', function() {
-                window.location.hash = '#testimonials';
+        // Make support icons clickable
+        document.querySelectorAll('.support-icon').forEach(icon => {
+            icon.addEventListener('click', function(e) {
+                const support = this.getAttribute('data-support');
+                let title, content;
+
+                switch(support) {
+                    case 'manual':
+                        title = 'Manuals & Guides';
+                        content = '<p>Download instruction manuals for all CatLoo models. Available in PDF format with illustrated setup guides.</p><br><a href="#" class="btn btn-primary">Download Manuals</a>';
+                        break;
+                    case 'warranty':
+                        title = 'Warranty Coverage';
+                        content = '<p>3-year limited warranty covering mechanical defects. Register your product for extended coverage.</p><br><a href="#" class="btn btn-primary">Register Product</a>';
+                        break;
+                    case 'shipping':
+                        title = 'Shipping Information';
+                        content = '<p>Free shipping on all US orders. International shipping available in 3-5 business days. 30-day risk-free trial.</p>';
+                        break;
+                    case 'contact':
+                        title = 'Contact Support';
+                        content = '<p>Speak with our feline specialists Monday-Friday 9AM-6PM, Saturday-Sunday 10AM-4PM (PST).</p><br><a href="mailto:hello@catloo.com" class="btn btn-primary">Email Us</a>';
+                        break;
+                }
+
+                if (title) showModal(title, content);
             });
-            card.style.cursor = 'pointer';
         });
 
-        // Make security items clickable
-        document.querySelectorAll('.security-item').forEach(item => {
-            item.addEventListener('click', function() {
-                const title = this.querySelector('h4')?.textContent;
-                if (title === '256-bit SSL Encryption') window.location.hash = '#security-policy';
-                else if (title === '30-Day Money Back') window.location.hash = '#returns-policy';
-                else if (title === 'Free Shipping') window.location.hash = '#shipping-info';
-                else if (title === '24/7 Support') window.location.hash = '#contact';
-            });
-            item.style.cursor = 'pointer';
-        });
-
-        // Make hero graphic clickable
-        const heroGraphic = document.querySelector('.hero-graphic');
-        if (heroGraphic) {
-            heroGraphic.addEventListener('click', function() {
+        // Make product images clickable
+        document.querySelectorAll('.product-image').forEach(img => {
+            img.addEventListener('click', function() {
+                const product = this.getAttribute('data-product');
                 window.location.hash = '#products';
             });
-            heroGraphic.style.cursor = 'pointer';
+        });
+
+        // Make step more buttons clickable
+        document.querySelectorAll('.step-more').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const step = this.getAttribute('data-step');
+                let title, content;
+
+                switch(step) {
+                    case 'placement':
+                        title = 'Fixture Placement Guide';
+                        content = '<p>Position on a level, waterproof surface near a water supply. Ensure 8" clearance on all sides and access to power outlet for Pro/Deluxe models.</p>';
+                        break;
+                    case 'plumbing':
+                        title = 'Plumbing Connection';
+                        content = '<p>Connect the included 1/2" supply line to your standard residential plumbing. Professional installation recommended for optimal performance.</p>';
+                        break;
+                    case 'power':
+                        title = 'Power Options';
+                        content = '<p>Pro and Deluxe models include both USB-C and battery pack options. Basic model operates manually.</p>';
+                        break;
+                    case 'training':
+                        title = 'Cat Training Guide';
+                        content = '<p>Follow our step-by-step training guide. Most cats adapt within 2-3 days with consistent positive reinforcement.</p>';
+                        break;
+                }
+
+                if (title) showModal(title, content);
+            });
+        });
+
+        // Make product buttons clickable
+        document.querySelectorAll('[data-action]').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const action = this.getAttribute('data-action');
+                const target = this.getAttribute('data-target');
+
+                if (action === 'buy') {
+                    let title, content;
+                    switch(target) {
+                        case 'basic':
+                            title = 'Basic Edition - $89';
+                            content = '<p>Premium entry-level model with manual flush and deodorizing filter.</p><br><a href="#" class="btn btn-primary">Proceed to Checkout</a>';
+                            break;
+                        case 'pro':
+                            title = 'Pro Edition - $149';
+                            content = '<p>Sensor-activated flush with LED night light and adjustable riser ring.</p><br><a href="#" class="btn btn-primary">Proceed to Checkout</a>';
+                            break;
+                        case 'deluxe':
+                            title = 'Deluxe Edition - $299';
+                            content = '<p>Smart connectivity via companion app. Porcelain construction with self-cleaning cycle.</p><br><a href="#" class="btn btn-primary">Proceed to Checkout</a>';
+                            break;
+                    }
+                    if (title) showModal(title, content);
+                } else if (action === 'details') {
+                    let title, content;
+                    switch(target) {
+                        case 'basic':
+                            title = 'Basic Edition Details';
+                            content = '<ul style="margin-left: 1.25rem; line-height: 1.8;"><li>Manual flush handle</li><li>Deodorizing carbon filter</li><li>6" diameter, ideal for small cats</li><li>ABS plastic construction</li></ul>';
+                            break;
+                        case 'pro':
+                            title = 'Pro Edition Details';
+                            content = '<ul style="margin-left: 1.25rem; line-height: 1.8;"><li>Motion sensor activation</li><li>LED night light (blue)</li><li>Adjustable riser ring</li><li>Built-in water filter</li></ul>';
+                            break;
+                        case 'deluxe':
+                            title = 'Deluxe Edition Details';
+                            content = '<ul style="margin-left: 1.25rem; line-height: 1.8;"><li>WiFi connectivity</li><li>Self-cleaning cycle</li><li>Heated seat option</li><li>Porcelain glaze</li></ul>';
+                            break;
+                    }
+                    if (title) showModal(title, content);
+                }
+            });
+        });
+
+        // Add subtle water animation on page load
+        setTimeout(() => {
+            const water = document.getElementById('toiletWater');
+            if (water) {
+                water.style.opacity = '1';
+                setTimeout(() => {
+                    water.style.opacity = '0.8';
+                }, 800);
+            }
+        }, 1000);
+
+        // Close modal handlers
+        const modalClose = document.getElementById('modalClose');
+        if (modalClose) {
+            modalClose.addEventListener('click', closeModal);
         }
 
-        // Make section titles and descriptions clickable to scroll to sections
-        document.querySelectorAll('.section-title, .section-description').forEach(el => {
-            el.style.cursor = 'default';
+        // Close modal when clicking outside
+        const modal = document.getElementById('modal');
+        if (modal) {
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) closeModal();
+            });
+        }
+
+        // Escape key closes modal
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeModal();
         });
     }
 

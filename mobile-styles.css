@@ -1,0 +1,157 @@
+/* CatLoo Mobile - Overrides for mobile devices */
+/* This file overrides desktop styles for mobile-friendly layout */
+
+/* Override for mobile - stack hero content vertically */
+@media (max-width: 768px) {
+    /* Header adjustments */
+    .navbar {
+        padding: 0;
+    }
+
+    .nav-container {
+        padding: 0 1rem;
+        height: 60px;
+    }
+
+    .menu-toggle {
+        display: flex !important;
+    }
+
+    .nav-menu {
+        position: absolute !important;
+        top: calc(100% + 0.5rem);
+        right: 0.5rem;
+        left: auto;
+        background: var(--color-nav-bg);
+        flex-direction: column;
+        width: auto;
+        min-width: 160px;
+        padding: 0.5rem;
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-md);
+        box-shadow: var(--shadow-lg);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-8px);
+        transition: opacity 0.2s ease, transform 0.2s ease;
+        z-index: 1000;
+    }
+
+    .nav-menu.active {
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: translateY(0) !important;
+    }
+
+    /* Hero - stack vertically on mobile */
+    .hero-container {
+        grid-template-columns: 1fr !important;
+        text-align: center;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        gap: 1.5rem;
+    }
+
+    .hero-visual {
+        order: -1;
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+
+    .product-render {
+        width: 100% !important;
+        max-width: 280px !important;
+        height: auto !important;
+        aspect-ratio: 320/220;
+    }
+
+    .hero-content {
+        padding-top: 0;
+    }
+
+    .hero-stats {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+    }
+
+    .hero-actions {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    /* Products - full width cards */
+    .products-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem;
+    }
+
+    .product-card {
+        padding: 1.5rem;
+    }
+
+    .product-image {
+        height: 140px;
+        padding: 0.75rem;
+    }
+
+    /* Technology - single column on small screens */
+    .tech-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem;
+    }
+
+    /* Installation - single column */
+    .install-steps {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem;
+    }
+
+    /* Reviews - single column */
+    .reviews-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Support - 2 column grid */
+    .support-grid {
+        grid-template-columns: 1fr 1fr !important;
+    }
+
+    /* Contact - single column */
+    .contact-details {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Footer adjustments */
+    .footer-container {
+        grid-template-columns: 1fr !important;
+        gap: 2rem;
+    }
+
+    .footer-nav {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* Smaller screens */
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 1.75rem !important;
+    }
+
+    .section-title {
+        font-size: 1.5rem !important;
+    }
+
+    .support-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .hero-stats {
+        gap: 1rem;
+    }
+
+    .product-card {
+        padding: 1.25rem;
+    }
+}

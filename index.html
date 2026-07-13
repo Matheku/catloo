@@ -3,71 +3,169 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Premium miniature toilets designed exclusively for cats. Eco-friendly, odor-controlled, and easy to clean. Make your cat's bathroom experience luxurious.">
-    <meta name="keywords" content="cat toilet, miniature toilet, cat bathroom, pet accessories, eco-friendly cat products">
+    <meta name="description" content="Premium miniature toilets designed exclusively for cats. Elegant bathroom fixtures scaled for feline comfort with water-efficient technology.">
     <meta name="author" content="CatLoo Industries">
-    <title>CatLoo - Premium Miniature Toilets for Cats</title>
+    <title>CatLoo — Miniature Bathrooms for Cats</title>
+    <link rel="stylesheet" href="mobile-styles.css" media="(max-width: 768px)">
+    <link rel="stylesheet" href="styles.css" media="(min-width: 769px)">
     <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <!-- SVG Icons -->
+    <svg style="display: none;">
+        <symbol id="icon-toilet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 10V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v6M6 10h12v8a4 4 0 0 1-8 0V10M6 10l3 10h6l3-10" stroke-linecap="round" stroke-linejoin="round"/>
+        </symbol>
+        <symbol id="icon-water" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2.1c-4.97 5.1-4.97 13.3 0 18.4 4.97-5.1 4.97-13.3 0-18.4z" stroke-linecap="round"/>
+            <path d="M12 12v9" stroke-linecap="round"/>
+        </symbol>
+        <symbol id="icon-odor" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/>
+            <path d="M21 12h-1"/>
+            <path d="M3 12h1"/>
+            <path d="M12 3v1"/>
+            <path d="M12 20v1"/>
+        </symbol>
+        <symbol id="icon-safety" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </symbol>
+        <symbol id="icon-cleaning" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M1 12s4-8 11-8 11 8 11 8"/>
+            <path d="M21 12s-4 8-11 8-11-8-11-8"/>
+            <path d="M12 8v8"/>
+        </symbol>
+        <symbol id="icon-flush" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2v8"/>
+            <path d="M8 6l4 4 4-4"/>
+            <path d="M5 12h14"/>
+            <path d="M7 16h10"/>
+        </symbol>
+        <symbol id="icon-manual" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6v20h12V8z"/>
+            <path d="M14 2l-2 2-2-2"/>
+        </symbol>
+        <symbol id="icon-warranty" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <path d="M9 12l2 2 4-4"/>
+        </symbol>
+        <symbol id="icon-shipping" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M1 3h15l3 3-4 4-6-6H1z"/>
+            <path d="M5 21a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>
+            <path d="M17 21a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>
+        </symbol>
+        <symbol id="icon-contact" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1 .9-2 2-2z"/>
+            <path d="M22 6l-10 7L2 6"/>
+        </symbol>
+        <symbol id="icon-cat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 15v3"/>
+            <path d="M17 12v.01"/>
+            <path d="M7 12v.01"/>
+            <path d="M16 8V5a2 2 0 0 0-2-2h-6a2 2 0 0 0-2 2v3"/>
+            <path d="M12 2v3"/>
+            <path d="M21 10a3 3 0 1 1-3 3 3 3 0 1 1-3-3 3 3 0 1 1 3 3 3 3 0 1 1 3 3"/>
+        </symbol>
+        <symbol id="icon-paw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4.9 19.1C3 15.2 3 10.8 4.9 7c1.9-3.9 5.9-6 10.1-6s8.2 2.1 10.1 6c1.9 3.8 1.9 8.2-.1 12.1-1.9 3.8-5.9 6-10.1 6S6.8 23 4.9 19.1z"/>
+            <path d="M12 16v-4"/>
+        </symbol>
+        <symbol id="icon-cat-smile" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M8 10h.01"/>
+            <path d="M16 10h.01"/>
+            <path d="M15.5 15.5c-1 .75-2.25.75-3.25 0"/>
+        </symbol>
+        <symbol id="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </symbol>
+        <symbol id="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"/>
+            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M17.36 19.78l1.42-1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M17.36 6.64l1.42-1.42"/>
+        </symbol>
+        <symbol id="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 6h18M3 12h18M3 18h18"/>
+        </symbol>
+        <symbol id="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 6l-12 12M6 6l12 12"/>
+        </symbol>
+        <symbol id="icon-star" viewBox="0 0 24 24" fill="currentColor">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+        </symbol>
+        <symbol id="icon-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+        </symbol>
+    </svg>
 </head>
 <body>
+    <!-- Modal Container -->
+    <div id="modal" class="modal" aria-hidden="true">
+        <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <button class="modal-close" id="modalClose" aria-label="Close modal">
+                <svg width="20" height="20"><use href="#icon-close"></use></svg>
+            </button>
+            <h3 id="modal-title" class="modal-title"></h3>
+            <div class="modal-body" id="modal-body"></div>
+        </div>
+    </div>
+
     <!-- Navigation -->
     <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="container nav-container">
-            <a href="#home" class="logo" aria-label="CatLoo Home">
-                🐱 CatLoo
+            <a href="#top" class="logo" aria-label="CatLoo Home">
+                <img src="assets/catloo-logo.png" alt="CatLoo" class="logo-icon">
+                <span class="logo-text">CatLoo</span>
             </a>
             <ul class="nav-menu" id="navMenu">
-                <li><a href="#home" class="nav-link active">Home</a></li>
-                <li><a href="#products" class="nav-link">Products</a></li>
-                <li><a href="#features" class="nav-link">Features</a></li>
-                <li><a href="#about" class="nav-link">About Us</a></li>
-                <li><a href="#testimonials" class="nav-link">Reviews</a></li>
-                <li><a href="#faq" class="nav-link">FAQ</a></li>
+                <li><a href="#products" class="nav-link active">Products</a></li>
+                <li><a href="#technology" class="nav-link">Technology</a></li>
+                <li><a href="#installation" class="nav-link">Installation</a></li>
+                <li><a href="#reviews" class="nav-link">Reviews</a></li>
+                <li><a href="#support" class="nav-link">Support</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
             <div class="nav-controls">
                 <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-                    <span class="toggle-icon">🌙</span>
+                    <span class="toggle-icon">
+                        <svg id="themeIcon" width="20" height="20"><use href="#icon-moon"></use></svg>
+                    </span>
                 </button>
                 <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
-                    <span class="hamburger"></span>
+                    <svg width="24" height="24"><use href="#icon-menu"></use></svg>
                 </button>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero" id="home">
+    <section class="hero" id="top">
         <div class="container hero-container">
             <div class="hero-content">
-                <h1 class="hero-title">Transform Your Cat's Bathroom Experience</h1>
-                <p class="hero-subtitle">Premium miniature toilets designed exclusively for cats. Eco-friendly, odor-controlled, and easy to clean. Give your feline the luxury bathroom they deserve.</p>
-                <div class="hero-actions">
-                    <a href="#products" class="btn btn-primary">Shop Collection</a>
-                    <a href="#features" class="btn btn-secondary">View Features</a>
-                </div>
+                <div class="hero-eyebrow">Bathroom Collection • 2026</div>
+                <h1 class="hero-title">The Throne Your Cat Deserves</h1>
+                <p class="hero-subtitle">Premium miniature toilets designed for feline comfort. Water-efficient, odor-sealed, and architecturally refined.</p>
                 <div class="hero-stats">
-                    <a href="#testimonials" class="stat">
-                        <span class="stat-number">50K+</span>
-                        <span class="stat-label">Happy Customers</span>
-                    </a>
-                    <a href="#testimonials" class="stat">
+                    <button class="stat" data-target="reviews">
+                        <span class="stat-number">50,000+</span>
+                        <span class="stat-label">Installed</span>
+                    </button>
+                    <button class="stat" data-target="reviews">
                         <span class="stat-number">4.9★</span>
-                        <span class="stat-label">Average Rating</span>
-                    </a>
-                    <a href="#shipping-info" class="stat">
-                        <span class="stat-number">100%</span>
-                        <span class="stat-label">Satisfaction</span>
-                    </a>
+                        <span class="stat-label">Rating</span>
+                    </button>
+                    <button class="stat" data-target="shipping">
+                        <span class="stat-number">Free</span>
+                        <span class="stat-label">Shipping</span>
+                    </button>
+                </div>
+                <div class="hero-actions">
+                    <a href="#products" class="btn btn-primary">View Collection</a>
+                    <a href="#technology" class="btn btn-secondary">How It Works</a>
                 </div>
             </div>
-            <div class="hero-image">
-                <a href="#products" class="hero-graphic" aria-label="View product collection">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect x='50' y='75' width='300' height='150' rx='20' fill='%233b82f6'/%3E%3Crect x='75' y='100' width='250' height='100' rx='10' fill='%23e2e8f0'/%3E%3Ccircle cx='200' cy='150' r='40' fill='%2364748b'/%3E%3Cpath d='M175 60 L225 60 L225 100 L175 100 Z' fill='%231e293b'/%3E%3Ctext x='200' y='155' text-anchor='middle' fill='%23ffffff' font-size='14' font-family='Arial'%3ECatLoo%3C/text%3E%3C/svg%3E" alt="CatLoo Premium Cat Toilet" style="width:100%; height:auto; display:block;">
-                </a>
+            <div class="hero-visual">
+                <div class="product-render" id="heroProduct">
+                    <img src="assets/catloo-hero.png" alt="CatLoo Premium Collection">
+                </div>
             </div>
         </div>
     </section>
@@ -75,187 +173,255 @@
     <!-- Products Section -->
     <section class="products" id="products">
         <div class="container">
-            <h2 class="section-title">Our Product Collection</h2>
-            <p class="section-description">Choose from our range of premium, space-saving toilets designed specifically for your cat's comfort and your home's aesthetic.</p>
-            <div class="features-grid">
-                <!-- CatLoo Basic -->
-                <article class="feature-card product-card">
-                    <a href="#shop-basic" class="product-image-link">
-                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3Crect x='25' y='40' width='250' height='120' rx='15' fill='%233b82f6'/%3E%3Crect x='50' y='65' width='200' height='70' rx='8' fill='%23e2e8f0'/%3E%3Ccircle cx='150' cy='100' r='30' fill='%2364748b'/%3E%3Ctext x='150' y='105' text-anchor='middle' fill='%23ffffff' font-size='12' font-family='Arial'%3EBasic%3C/text%3E%3C/svg%3E" alt="CatLoo Basic Model" class="product-image">
-                    </a>
-                    <h3 class="feature-title"><a href="#shop-basic" class="feature-title-link">CatLoo Basic</a></h3>
-                    <p class="feature-text">Our entry-level model featuring basic flushing technology, compact design, and easy maintenance. Perfect for first-time cat toilet users.</p>
-                    <div class="product-details">
-                        <span class="price">$89.99</span>
-                        <span class="detail"><a href="#basic-specs">Plastic construction</a> • <a href="#manual-flush">Manual flush</a> • <a href="#easy-clean">Easy clean</a></span>
-                        <a href="#buy-basic" class="btn btn-primary btn-small">Buy Now</a>
-                        <a href="#basic-details" class="btn btn-secondary btn-small">Details</a>
+            <header class="section-header">
+                <h2 class="section-title">Product Line</h2>
+                <p class="section-desc">Three editions for every household. All models NSF-certified for pet safety.</p>
+            </header>
+            <div class="products-grid">
+                <article class="product-card">
+                    <div class="product-badge">Entry</div>
+                    <button class="product-image product-basic" data-product="basic">
+                        <img src="assets/catloo-basic.png" alt="CatLoo Basic Model">
+                    </button>
+                    <h3 class="product-name">Basic Edition</h3>
+                    <p class="product-desc">Pared-back functionality for cats and kittens learning house training. Includes flush handle and deodorizing filter.</p>
+                    <div class="product-specs">
+                        <span class="spec">Manual Flush</span>
+                        <span class="spec">6" Diameter</span>
+                        <span class="spec">ABS Plastic</span>
+                    </div>
+                    <div class="product-pricing">
+                        <span class="price">$89</span>
+                        <button class="btn btn-secondary btn-small" data-action="details" data-target="basic">Details</button>
+                        <button class="btn btn-primary btn-small" data-action="buy" data-target="basic">Order</button>
                     </div>
                 </article>
-                <!-- CatLoo Pro -->
-                <article class="feature-card product-card featured">
-                    <div class="featured-badge">Most Popular</div>
-                    <a href="#shop-pro" class="product-image-link">
-                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3Crect x='25' y='40' width='250' height='120' rx='15' fill='%238b5cf6'/%3E%3Crect x='50' y='65' width='200' height='70' rx='8' fill='%23e2e8f0'/%3E%3Ccircle cx='150' cy='100' r='30' fill='%2364748b'/%3E%3Ctext x='150' y='105' text-anchor='middle' fill='%23ffffff' font-size='12' font-family='Arial'%3EPro%3C/text%3E%3C/svg%3E" alt="CatLoo Pro Model" class="product-image">
-                    </a>
-                    <h3 class="feature-title"><a href="#shop-pro" class="feature-title-link">CatLoo Pro</a></h3>
-                    <p class="feature-text">Advanced model with automatic sensor flush, odor-sealing technology, and adjustable seat height. Includes night light for midnight visits.</p>
-                    <div class="product-details">
-                        <span class="price">$149.99</span>
-                        <span class="detail"><a href="#pro-specs">Premium plastic</a> • <a href="#auto-flush">Auto flush</a> • <a href="#night-light">Night light</a></span>
-                        <a href="#buy-pro" class="btn btn-primary btn-small">Buy Now</a>
-                        <a href="#pro-details" class="btn btn-secondary btn-small">Details</a>
+
+                <article class="product-card featured">
+                    <div class="product-badge badge-pro">Most Popular</div>
+                    <button class="product-image product-pro" data-product="pro">
+                        <img src="assets/catloo-pro.png" alt="CatLoo Pro Model">
+                    </button>
+                    <h3 class="product-name">Pro Edition</h3>
+                    <p class="product-desc">Sensor-activated flush with LED night light and adjustable riser ring. Perfect balance of innovation and reliability.</p>
+                    <div class="product-specs">
+                        <span class="spec">Motion Sensor</span>
+                        <span class="spec">Night Light</span>
+                        <span class="spec">Water Filter</span>
+                    </div>
+                    <div class="product-pricing">
+                        <span class="price">$149</span>
+                        <button class="btn btn-secondary btn-small" data-action="details" data-target="pro">Details</button>
+                        <button class="btn btn-primary btn-small" data-action="buy" data-target="pro">Order</button>
                     </div>
                 </article>
-                <!-- CatLoo Deluxe -->
-                <article class="feature-card product-card">
-                    <a href="#shop-deluxe" class="product-image-link">
-                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3Crect x='25' y='40' width='250' height='120' rx='15' fill='%2306b6d4'/%3E%3Crect x='50' y='65' width='200' height='70' rx='8' fill='%23e2e8f0'/%3E%3Ccircle cx='150' cy='100' r='30' fill='%2364748b'/%3E%3Ctext x='150' y='105' text-anchor='middle' fill='%23ffffff' font-size='12' font-family='Arial'%3EDeluxe%3C/text%3E%3C/svg%3E" alt="CatLoo Deluxe Model" class="product-image">
-                    </a>
-                    <h3 class="feature-title"><a href="#shop-deluxe" class="feature-title-link">CatLoo Deluxe</a></h3>
-                    <p class="feature-text">Luxury porcelain construction with smart WiFi connectivity, self-cleaning cycle, and mobile app integration. The ultimate in cat bathroom sophistication.</p>
-                    <div class="product-details">
-                        <span class="price">$299.99</span>
-                        <span class="detail"><a href="#deluxe-specs">Porcelain</a> • <a href="#smart-features">Smart features</a> • <a href="#self-clean">Self-cleaning</a></span>
-                        <a href="#buy-deluxe" class="btn btn-primary btn-small">Buy Now</a>
-                        <a href="#deluxe-details" class="btn btn-secondary btn-small">Details</a>
+
+                <article class="product-card">
+                    <div class="product-badge badge-deluxe">Deluxe</div>
+                    <button class="product-image product-deluxe" data-product="deluxe">
+                        <img src="assets/catloo-deluxe.png" alt="CatLoo Deluxe Model">
+                    </button>
+                    <h3 class="product-name">Deluxe Edition</h3>
+                    <p class="product-desc">Smart connectivity via companion app. Porcelain construction with self-cleaning cycle and heated seat option.</p>
+                    <div class="product-specs">
+                        <span class="spec">WiFi Connected</span>
+                        <span class="spec">Porcelain</span>
+                        <span class="spec">Self-Cleaning</span>
+                    </div>
+                    <div class="product-pricing">
+                        <span class="price">$299</span>
+                        <button class="btn btn-secondary btn-small" data-action="details" data-target="deluxe">Details</button>
+                        <button class="btn btn-primary btn-small" data-action="buy" data-target="deluxe">Order</button>
                     </div>
                 </article>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features" id="features">
+    <!-- Technology Section -->
+    <section class="technology" id="technology">
         <div class="container">
-            <h2 class="section-title">Why Choose CatLoo?</h2>
-            <p class="section-description">Our innovative design solves common litter box problems with cutting-edge technology and thoughtful engineering.</p>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon" aria-hidden="true">♻️</div>
-                    <h3 class="feature-title">Water-Efficient</h3>
-                    <p class="feature-text">Uses 90% less water than standard toilets. Each flush consumes only 0.3 liters, making it environmentally friendly and cost-effective.</p>
+            <header class="section-header">
+                <h2 class="section-title">Engineering Excellence</h2>
+                <p class="section-desc">Every detail considered for your cat's comfort and your home's hygiene.</p>
+            </header>
+            <div class="tech-grid">
+                <article class="tech-card">
+                    <button class="tech-icon" data-tech="flush" aria-label="Flush System Details">
+                        <svg width="28" height="28"><use href="#icon-water"></use></svg>
+                    </button>
+                    <h3 class="tech-name">Flush System</h3>
+                    <p class="tech-desc">Precision-engineered 0.3L mechanism. Quiet operation under 25dB.</p>
+                </article>
+                <article class="tech-card">
+                    <button class="tech-icon" data-tech="odor" aria-label="Odor Control Details">
+                        <svg width="28" height="28"><use href="#icon-odor"></use></svg>
+                    </button>
+                    <h3 class="tech-name">Odor Control</h3>
+                    <p class="tech-desc">Activated carbon filtration with sealed trapway technology.</p>
+                </article>
+                <article class="tech-card">
+                    <button class="tech-icon" data-tech="safety" aria-label="Safety Details">
+                        <svg width="28" height="28"><use href="#icon-safety"></use></svg>
+                    </button>
+                    <h3 class="tech-name">Safety Certified</h3>
+                    <p class="tech-desc">NSF-approved materials. Non-toxic, BPA-free construction.</p>
+                </article>
+                <article class="tech-card">
+                    <button class="tech-icon" data-tech="cleaning" aria-label="Cleaning Details">
+                        <svg width="28" height="28"><use href="#icon-cleaning"></use></svg>
+                    </button>
+                    <h3 class="tech-name">Easy Clean</h3>
+                    <p class="tech-desc">Coated surfaces resist residue. Clean in under 10 seconds.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Installation Section -->
+    <section class="installation" id="installation">
+        <div class="container">
+            <header class="section-header">
+                <h2 class="section-title">Simple Installation</h2>
+                <p class="section-desc">Ready in 30 minutes. Fits standard residential plumbing.</p>
+            </header>
+            <div class="install-steps">
+                <div class="install-step">
+                    <div class="step-number">01</div>
+                    <h4 class="step-title">Position Fixture</h4>
+                    <p class="step-desc">Place on level surface near water supply. Allow 8" clearance on sides.</p>
+                    <button class="step-more" data-step="placement">Learn More <svg><use href="#icon-arrow-right"></use></svg></button>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon" aria-hidden="true">🛡️</div>
-                    <h3 class="feature-title">Odor Sealing</h3>
-                    <p class="feature-text">Advanced sealing technology locks in odors immediately. Built-in activated carbon filter eliminates 99% of unpleasant smells.</p>
+                <div class="install-step">
+                    <div class="step-number">02</div>
+                    <h4 class="step-title">Connect Plumbing</h4>
+                    <p class="step-desc">Attach included supply line. Standard 1/2" compression fitting.</p>
+                    <button class="step-more" data-step="plumbing">Learn More <svg><use href="#icon-arrow-right"></use></svg></button>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon" aria-hidden="true">🧹</div>
-                    <h3 class="feature-title">Easy Cleaning</h3>
-                    <p class="feature-text">Non-stick ceramic coating prevents residue buildup. Smooth surfaces clean in seconds with minimal effort required.</p>
+                <div class="install-step">
+                    <div class="step-number">03</div>
+                    <h4 class="step-title">Power Setup</h4>
+                    <p class="step-desc">Plug into GFCI outlet or install battery pack for Pro/Deluxe models.</p>
+                    <button class="step-more" data-step="power">Learn More <svg><use href="#icon-arrow-right"></use></svg></button>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon" aria-hidden="true">📏</div>
-                    <h3 class="feature-title">Perfect Size</h3>
-                    <p class="feature-text">Specially designed at 6 inches diameter - ideal for cats up to 20 pounds. Compact footprint saves valuable floor space.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon" aria-hidden="true">⚡</div>
-                    <h3 class="feature-title">Quick Installation</h3>
-                    <p class="feature-text">Ready to use in minutes. Includes all necessary adapters for standard plumbing connections. No professional installation required.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon" aria-hidden="true">🏆</div>
-                    <h3 class="feature-title">Veterinarian Approved</h3>
-                    <p class="feature-text">Endorsed by leading vets for promoting hygiene and reducing litter-related allergies. Safe for cats 8 weeks and older.</p>
+                <div class="install-step">
+                    <div class="step-number">04</div>
+                    <h4 class="step-title">Test & Train</h4>
+                    <p class="step-desc">Demonstrate flush function. Follow training guide for cat acclimation.</p>
+                    <button class="step-more" data-step="training">Learn More <svg><use href="#icon-arrow-right"></use></svg></button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="testimonials" id="testimonials">
+    <!-- Reviews Section -->
+    <section class="reviews" id="reviews">
         <div class="container">
-            <h2 class="section-title">What Our Customers Say</h2>
-            <p class="section-description">Join thousands of satisfied pet parents who've upgraded their cat's bathroom experience.</p>
-            <div class="features-grid">
-                <div class="feature-card testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="testimonial-avatar" aria-hidden="true">🐈</div>
+            <header class="section-header">
+                <h2 class="section-title">Customer Reviews</h2>
+                <p class="section-desc">Evidence from homes that have made the switch.</p>
+            </header>
+            <div class="reviews-grid">
+                <article class="review-card">
+                    <blockquote class="review-quote">
+                        "Worth every penny. Bella took to it within two days, and our apartment hasn't smelled this fresh in years."
+                    </blockquote>
+                    <footer class="review-author">
+                        <button class="author-avatar" aria-label="View profile">
+                            <svg width="18" height="18"><use href="#icon-cat"></use></svg>
+                        </button>
                         <div>
-                            <h4 class="feature-title" style="margin-bottom: 0.25rem;">Sarah Johnson</h4>
-                            <span class="testimonial-stars">★★★★★</span>
+                            <cite class="author-name">Sarah Johnson, Portland</cite>
+                            <div class="review-rating">
+                                <svg width="16" height="16"><use href="#icon-star"></use></svg>
+                                <svg width="16" height="16"><use href="#icon-star"></use></svg>
+                                <svg width="16" height="16"><use href="#icon-star"></use></svg>
+                                <svg width="16" height="16"><use href="#icon-star"></use></svg>
+                                <svg width="16" height="16"><use href="#icon-star"></use></svg>
+                            </div>
                         </div>
-                    </div>
-                    <p class="feature-text">"Finally! Something that actually keeps the smell away. My cat took to it immediately and I haven't bought litter in 6 months!"</p>
-                </div>
-                <div class="feature-card testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="testimonial-avatar" aria-hidden="true">🐾</div>
+                    </footer>
+                </article>
+                <article class="review-card">
+                    <blockquote class="review-quote">
+                        "The Pro model's night light is ingenious. Mittens uses it at 3AM and I sleep through everything."
+                    </blockquote>
+                    <footer class="review-author">
+                        <button class="author-avatar" aria-label="View profile">
+                            <svg width="18" height="18"><use href="#icon-paw"></use></svg>
+                        </button>
                         <div>
-                            <h4 class="feature-title" style="margin-bottom: 0.25rem;">Michael Chen</h4>
-                            <span class="testimonial-stars">★★★★★</span>
+                            <cite class="author-name">Michael Chen, Seattle</cite>
+                            <div class="review-rating">
+                                <svg width="16" height="16"><use href="#icon-star"></use></svg>
+                                <svg width="16" height="16"><use href="#icon-star"></use></svg>
+                                <svg width="16" height="16"><use href="#icon-star"></use></svg>
+                                <svg width="16" height="16"><use href="#icon-star"></use></svg>
+                                <svg width="16" height="16"><use href="#icon-star"></use></svg>
+                            </div>
                         </div>
-                    </div>
-                    <p class="feature-text">"The Deluxe model was worth every penny. The WiFi feature is oddly satisfying to monitor from my phone. Great engineering!"</p>
-                </div>
-                <div class="feature-card testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="testimonial-avatar" aria-hidden="true">😸</div>
+                    </footer>
+                </article>
+                <article class="review-card">
+                    <blockquote class="review-quote">
+                        "Installed the Deluxe for our Maine Coon. The app notifications are surprisingly useful. Cleanest litter solution ever."
+                    </blockquote>
+                    <footer class="review-author">
+                        <button class="author-avatar" aria-label="View profile">
+                            <svg width="18" height="18"><use href="#icon-cat-smile"></use></svg>
+                        </button>
                         <div>
-                            <h4 class="feature-title" style="margin-bottom: 0.25rem;">Emma Rodriguez</h4>
-                            <span class="testimonial-stars">★★★★★</span>
+                            <cite class="author-name">Emma Rodriguez, Austin</cite>
+                            <div class="review-rating">
+                                <svg width="16" height="16"><use href="#icon-star"></use></svg>
+                                <svg width="16" height="16"><use href="#icon-star"></use></svg>
+                                <svg width="16" height="16"><use href="#icon-star"></use></svg>
+                                <svg width="16" height="16"><use href="#icon-star"></use></svg>
+                                <svg width="16" height="16"><use href="#icon-star"></use></svg>
+                            </div>
                         </div>
-                    </div>
-                    <p class="feature-text">"My apartment has never smelled better. Installation was surprisingly simple and my cat adapted in just one day!"</p>
-                </div>
+                    </footer>
+                </article>
             </div>
         </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section class="faq" id="faq">
+    <!-- Support Section -->
+    <section class="support" id="support">
         <div class="container">
-            <h2 class="section-title">Frequently Asked Questions</h2>
-            <div class="faq-grid">
-                <details class="faq-item">
-                    <summary class="faq-question">Is the CatLoo safe for all cats?</summary>
-                    <p class="faq-answer">Yes! Our toilets are designed for cats 8 weeks and older, up to 20 pounds. The step-by-step training guide ensures a smooth transition from litter boxes.</p>
-                </details>
-                <details class="faq-item">
-                    <summary class="faq-question">How does the flushing mechanism work?</summary>
-                    <p class="faq-answer">The Basic and Pro models use a simple button-activated flush system. The Deluxe model features motion sensors that detect when your cat has finished.</p>
-                </details>
-                <details class="faq-item">
-                    <summary class="faq-question">What plumbing connections are needed?</summary>
-                    <p class="faq-answer">Standard 1.25-inch connections included. Compatible with most residential plumbing. Professional installation recommended for Deluxe model smart features.</p>
-                </details>
-                <details class="faq-item">
-                    <summary class="faq-question">How often does it need cleaning?</summary>
-                    <p class="faq-answer">The self-cleaning cycle on Deluxe model runs automatically. Basic/Pro models need manual cleaning once weekly with included non-abrasive cleaner.</p>
-                </details>
-                <details class="faq-item">
-                    <summary class="faq-question">What's the warranty period?</summary>
-                    <p class="faq-answer">All models include our 3-year comprehensive warranty covering manufacturing defects, with lifetime support for all customers.</p>
-                </details>
-                <details class="faq-item">
-                    <summary class="faq-question">Do you offer international shipping?</summary>
-                    <p class="faq-answer">Yes! We ship worldwide with 3-5 business day processing and 7-21 day delivery depending on location. Free shipping on orders over $150.</p>
-                </details>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <div class="hero-container">
-                <div class="hero-content">
-                    <h2 class="section-title" style="text-align: left; margin-bottom: 1.5rem;">About CatLoo Industries</h2>
-                    <p class="section-description" style="text-align: left;">Founded in 2023 by veterinarian Dr. Sarah Whiskers and engineer Alex Flushman, CatLoo Industries revolutionizes pet hygiene with innovative bathroom solutions. Our mission: create cleaner homes and happier cats through superior design.</p>
-                    <p class="feature-text" style="margin-top: 1rem;">Based in Portland, Oregon, we've served over 50,000 customers across 25 countries. Every product undergoes rigorous testing in our cat-friendly facility where local shelter cats help us perfect each design.</p>
-                    <div class="hero-actions" style="margin-top: 2rem;">
-                        <a href="#learn-more" class="btn btn-secondary">Our Story</a>
-                        <a href="#careers" class="btn btn-secondary">Careers</a>
-                    </div>
-                </div>
-                <div class="hero-image">
-                    <div class="hero-graphic" style="height: 300px; background: linear-gradient(135deg, var(--color-secondary), var(--color-accent));">
-                        <div style="display: flex; align-items: center; justify-content: center; height: 100%; font-size: 4rem;" aria-label="Team photo placeholder">🏢</div>
-                    </div>
-                </div>
+            <header class="section-header">
+                <h2 class="section-title">Help & Support</h2>
+                <p class="section-desc">Resources for successful ownership.</p>
+            </header>
+            <div class="support-grid">
+                <article class="support-item">
+                    <button class="support-icon" data-support="manual" aria-label="Manuals">
+                        <svg width="24" height="24"><use href="#icon-manual"></use></svg>
+                    </button>
+                    <h3 class="support-name">Manuals</h3>
+                    <p class="support-text">Download instruction guides for your model.</p>
+                </article>
+                <article class="support-item">
+                    <button class="support-icon" data-support="warranty" aria-label="Warranty">
+                        <svg width="24" height="24"><use href="#icon-warranty"></use></svg>
+                    </button>
+                    <h3 class="support-name">Warranty</h3>
+                    <p class="support-text">3-year coverage. Hassle-free replacements.</p>
+                </article>
+                <article class="support-item">
+                    <button class="support-icon" data-support="shipping" aria-label="Shipping">
+                        <svg width="24" height="24"><use href="#icon-shipping"></use></svg>
+                    </button>
+                    <h3 class="support-name">Shipping</h3>
+                    <p class="support-text">Free US delivery. International rates available.</p>
+                </article>
+                <article class="support-item">
+                    <button class="support-icon" data-support="contact" aria-label="Contact">
+                        <svg width="24" height="24"><use href="#icon-contact"></use></svg>
+                    </button>
+                    <h3 class="support-name">Contact</h3>
+                    <p class="support-text">Speak with our specialists. Response within 24h.</p>
+                </article>
             </div>
         </div>
     </section>
@@ -263,82 +429,26 @@
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="container">
-            <h2 class="section-title">Contact Us</h2>
-            <p class="section-description">Have questions? Our feline specialists are here to help!</p>
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <h3>Get in Touch</h3>
-                    <ul class="contact-list">
-                        <li>
-                            <strong>Email:</strong>
-                            <a href="mailto:purr@catloo.com">purr@catloo.com</a>
-                        </li>
-                        <li>
-                            <strong>Phone:</strong>
-                            <a href="tel:+1-503-555-CATS">+1 (503) 555-CATS (2287)</a>
-                        </li>
-                        <li>
-                            <strong>Hours:</strong>
-                            <span>Mon-Fri 9AM-6PM PST, Sat-Sun 10AM-4PM PST</span>
-                        </li>
-                        <li>
-                            <strong>Address:</strong>
-                            <a href="https://maps.google.com/?q=1234+Purr+Street+Portland+OR" target="_blank" rel="noopener">1234 Purr Street, Portland, OR 97201</a>
-                        </li>
-                    </ul>
+            <header class="section-header">
+                <h2 class="section-title">Get in Touch</h2>
+                <p class="section-desc">We're here to answer any questions about your cat's new bathroom.</p>
+            </header>
+            <div class="contact-details">
+                <div class="contact-method">
+                    <h3>Email</h3>
+                    <a href="mailto:hello@catloo.com" class="contact-link">hello@catloo.com</a>
                 </div>
-                <form class="contact-form" id="contactForm">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" placeholder="Your name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="your@email.com" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="subject">Subject</label>
-                        <select id="subject" name="subject" required>
-                            <option value="">Select topic</option>
-                            <option value="order">Order Question</option>
-                            <option value="support">Technical Support</option>
-                            <option value="partnership">Partnership Inquiry</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="5" placeholder="How can we help?" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Security & Trust Section -->
-    <section class="security">
-        <div class="container">
-            <div class="security-grid">
-                <div class="security-item">
-                    <div class="feature-icon" aria-hidden="true">🔒</div>
-                    <h4>256-bit SSL Encryption</h4>
-                    <p>All transactions secured with bank-level security protocols.</p>
+                <div class="contact-method">
+                    <h3>Phone</h3>
+                    <a href="tel:+1-503-555-CATS" class="contact-link">+1 (503) 555-CATS</a>
                 </div>
-                <div class="security-item">
-                    <div class="feature-icon" aria-hidden="true">🛡️</div>
-                    <h4>30-Day Money Back</h4>
-                    <p>Not satisfied? Return within 30 days for full refund.</p>
+                <div class="contact-method">
+                    <h3>Address</h3>
+                    <a href="https://maps.google.com/?q=1234+Pearl+Street+Portland+OR" target="_blank" class="contact-link">1234 Pearl Street, Portland, OR</a>
                 </div>
-                <div class="security-item">
-                    <div class="feature-icon" aria-hidden="true">🚚</div>
-                    <h4>Free Shipping</h4>
-                    <p>Free delivery on all orders over $150 worldwide.</p>
-                </div>
-                <div class="security-item">
-                    <div class="feature-icon" aria-hidden="true">📞</div>
-                    <h4>24/7 Support</h4>
-                    <p>Expert assistance available anytime you need it.</p>
+                <div class="contact-method">
+                    <h3>Hours</h3>
+                    <span class="contact-time">Mon-Fri 9AM-6PM • Sat-Sun 10AM-4PM (PST)</span>
                 </div>
             </div>
         </div>
@@ -348,63 +458,53 @@
     <footer class="footer">
         <div class="container footer-container">
             <div class="footer-brand">
-                <a href="#home" class="logo footer-logo">🐱 CatLoo</a>
-                <p class="footer-text">Premium miniature toilets for cats. Making homes cleaner, one purr at a time.</p>
-                <div class="social-links">
-                    <a href="#instagram" aria-label="Instagram">📷</a>
-                    <a href="#facebook" aria-label="Facebook">📘</a>
-                    <a href="#twitter" aria-label="Twitter">🐦</a>
-                    <a href="#youtube" aria-label="YouTube">📺</a>
+                <a href="#top" class="logo footer-logo">
+                    <img src="assets/catloo-logo.png" alt="CatLoo" class="logo-icon">
+                    <span class="logo-text">CatLoo</span>
+                </a>
+                <p class="footer-tagline">Elevating feline hygiene since 2023.</p>
+                <div class="certification-logos">
+                    <span class="cert-badge" title="NSF Certified">NSF</span>
+                    <span class="cert-badge" title="UL Listed">UL</span>
+                    <span class="cert-badge" title="Energy Efficient">ENERGY</span>
                 </div>
             </div>
-            <div class="footer-links">
+            <nav class="footer-nav">
                 <div class="footer-column">
-                    <h4 class="footer-heading">Products</h4>
+                    <h5 class="footer-heading">Products</h5>
                     <ul>
-                        <li><a href="#shop-basic">CatLoo Basic</a></li>
-                        <li><a href="#shop-pro">CatLoo Pro</a></li>
-                        <li><a href="#shop-deluxe">CatLoo Deluxe</a></li>
+                        <li><a href="#basic">Basic</a></li>
+                        <li><a href="#pro">Pro</a></li>
+                        <li><a href="#deluxe">Deluxe</a></li>
                         <li><a href="#accessories">Accessories</a></li>
-                        <li><a href="#replacement-parts">Replacement Parts</a></li>
+                        <li><a href="#replacement">Parts</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h4 class="footer-heading">Company</h4>
+                    <h5 class="footer-heading">Support</h5>
                     <ul>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#careers">Careers</a></li>
-                        <li><a href="#press">Press</a></li>
-                        <li><a href="#blog">Blog</a></li>
-                        <li><a href="#partners">Partners</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4 class="footer-heading">Support</h4>
-                    <ul>
-                        <li><a href="#contact">Contact Us</a></li>
-                        <li><a href="#help-center">Help Center</a></li>
-                        <li><a href="#shipping-info">Shipping Info</a></li>
-                        <li><a href="#returns-policy">Returns Policy</a></li>
-                        <li><a href="#privacy-policy">Privacy Policy</a></li>
-                        <li><a href="#terms-of-service">Terms of Service</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4 class="footer-heading">Legal</h4>
-                    <ul>
+                        <li><a href="#manuals">Manuals</a></li>
                         <li><a href="#warranty">Warranty</a></li>
-                        <li><a href="#security-policy">Security Policy</a></li>
-                        <li><a href="#cookie-policy">Cookie Policy</a></li>
-                        <li><a href="#compliance">Compliance</a></li>
-                        <li><a href="#accessibility">Accessibility</a></li>
+                        <li><a href="#shipping">Shipping</a></li>
+                        <li><a href="#returns">Returns</a></li>
                     </ul>
                 </div>
-            </div>
+                <div class="footer-column">
+                    <h5 class="footer-heading">Company</h5>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#press">Press</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                        <li><a href="#sustainability">Sustainability</a></li>
+                        <li><a href="#terms">Terms</a></li>
+                    </ul>
+                </div>
+            </nav>
         </div>
-        <div class="footer-bottom">
+        <div class="footer-legal">
             <div class="container">
                 <p>&copy; <span id="currentYear"></span> CatLoo Industries. All rights reserved.</p>
-                <p>Registered in Oregon. EIN: 84-1234567 | Licensed Veterinary Equipment Supplier</p>
+                <p>EIN: 84-1234567 • Licensed Pet Fixture Dealer</p>
             </div>
         </div>
     </footer>
