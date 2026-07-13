@@ -178,55 +178,16 @@ h5 { font-size: 1.125rem; }
     border-radius: 50%;
     transition: var(--transition);
     color: var(--color-text);
-    position: relative;
-    overflow: hidden;
 }
 
-/* Gray circular ripple animation for toggle buttons */
-.toggle-ripple {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    border-radius: 50%;
-    background: rgba(203, 213, 224, 0.4);
-    transform: translate(-50%, -50%);
-    transition: width 0.3s ease, height 0.3s ease;
-    pointer-events: none;
+.theme-toggle:hover,
+.menu-toggle:hover {
+    background: var(--color-border);
 }
 
-.theme-toggle:active::after,
-.menu-toggle:active::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background: rgba(203, 213, 224, 0.4);
-    transform: translate(-50%, -50%);
-    animation: ripple-effect 0.3s ease-out;
-}
-
-@keyframes ripple-effect {
-    from {
-        width: 0;
-        height: 0;
-        opacity: 1;
-    }
-    to {
-        width: 100%;
-        height: 100%;
-        opacity: 0;
-    }
-}
-
-/* Dark theme gray */
-[data-theme="dark"] .theme-toggle:active::after,
-[data-theme="dark"] .menu-toggle:active::after {
-    background: rgba(61, 66, 72, 0.6);
+.theme-toggle:active,
+.menu-toggle:active {
+    background: var(--color-border);
 }
 
 .menu-toggle svg {
