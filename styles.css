@@ -170,50 +170,63 @@ h5 { font-size: 1.125rem; }
 
 .nav-controls { display: flex; align-items: center; gap: 1rem; }
 
-.theme-toggle {
+.theme-toggle, .menu-toggle {
     background: none;
     border: none;
-    font-size: 1.25rem;
     cursor: pointer;
     padding: 0.5rem;
     border-radius: 50%;
     transition: var(--transition);
     color: var(--color-text);
+    position: relative;
+    overflow: hidden;
 }
 
-.theme-toggle:hover { background: var(--color-border); }
-
-.theme-toggle:active {
-    background: var(--color-border);
-    transform: scale(0.95);
+/* Gray circular ripple animation for toggle buttons */
+.toggle-ripple {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(203, 213, 224, 0.4);
+    transform: translate(-50%, -50%);
+    transition: width 0.3s ease, height 0.3s ease;
+    pointer-events: none;
 }
 
-.theme-toggle:focus {
-    outline: none;
-    background: var(--color-border);
+.theme-toggle:active::after,
+.menu-toggle:active::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: rgba(203, 213, 224, 0.4);
+    transform: translate(-50%, -50%);
+    animation: ripple-effect 0.3s ease-out;
 }
 
-.theme-toggle:focus:not(:focus-visible) {
-    background: none;
+@keyframes ripple-effect {
+    from {
+        width: 0;
+        height: 0;
+        opacity: 1;
+    }
+    to {
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+    }
 }
 
-.theme-toggle:focus-visible {
-    background: var(--color-border);
-    outline: 2px solid var(--color-accent);
-    outline-offset: 2px;
-}
-
-.menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0.5rem;
-    width: 44px;
-    height: 44px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+/* Dark theme gray */
+[data-theme="dark"] .theme-toggle:active::after,
+[data-theme="dark"] .menu-toggle:active::after {
+    background: rgba(61, 66, 72, 0.6);
 }
 
 .menu-toggle svg {
