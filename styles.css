@@ -178,11 +178,24 @@ h5 { font-size: 1.125rem; }
     padding: 0.5rem;
     border-radius: 50%;
     transition: var(--transition);
+    color: var(--color-text);
 }
 
 .theme-toggle:hover { background: var(--color-border); }
 
-.theme-toggle:active { background: var(--color-border); }
+.theme-toggle:active {
+    background: var(--color-border);
+    transform: scale(0.95);
+}
+
+.theme-toggle:focus {
+    outline: none;
+    background: var(--color-border);
+}
+
+.theme-toggle:focus:not(:focus-visible) {
+    background: none;
+}
 
 .theme-toggle:focus-visible {
     background: var(--color-border);

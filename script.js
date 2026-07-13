@@ -352,7 +352,11 @@
     function bindEvents() {
         // Theme toggle
         if (themeToggle) {
-            themeToggle.addEventListener('click', toggleTheme);
+            themeToggle.addEventListener('click', function(e) {
+                toggleTheme();
+                // Remove focus to prevent permanent highlight on mobile
+                themeToggle.blur();
+            });
         }
 
         // Mobile menu toggle
